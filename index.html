@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Portal</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.24.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+
+    <!-- Header area -->
+    <header class="mt-7">
+        <div class="navbar bg-base-100">
+            <div class="flex-1">
+                <a class="btn btn-ghost normal-case text-xl">daisyUI</a>
+            </div>
+            <div class="flex-none">
+                <ul class="menu menu-horizontal p-0">
+                    <li><a>News</a></li>
+                    <li><a>Blogs</a></li>
+                </ul>
+            </div>
+            <div class="w-10 rounded-full">
+                <img class="rounded-full" src="images/arif cover photo.jpg" />
+            </div>
+        </div>
+        <hr class="w-full">
+    </header>
+
+    <!-- meno -->
+    <main>
+
+        <div id="meno">
+            <ul class="menu menu-horizontal bg-base-100 mt-7">
+                <li><a>Home</a></li>
+                <li><a>Breaking news</a></li>
+                <li><a>Regular news</a></li>
+                <li><a>International news</a></li>
+                <li><a>Sports</a></li>
+                <li><a>Entertainment</a></li>
+                <li><a>Culture</a></li>
+                <li><a>Arts</a></li>
+                <li><a>All news</a></li>
+            </ul>
+        </div>
+
+
+
+        <div class="mt-8 ml-10 mr-10">
+            <input id="search-field" type="text" class="input input-bordered input-accent w-full " />
+        </div>
+        <div class="flex mt-8 ml-10">
+            <h3 class="p-2">Short By view:</h3>
+
+            <input type="text" placeholder="Search" class="input input-bordered" />
+            <ul class="menu menu-horizontal bg-base-100 rounded-box p-2 ml-80">
+                <li class="p-3 bg-indigo-500">Today's Pick</li>
+                <!-- tabindex will make the parent menu focusable to keep the submenu open if it's focused -->
+                <li class="ml-5">
+                    <span class="border">Trending</span>
+
+                </li>
+            </ul>
+        </div>
+
+        <section class="">
+
+            <div id="news-container" class="card mb-3 ml-10 " style="max-width: 540px;">
+
+            </div>
+        </section>
+    </main>
+    <script src="js/index.js"></script>
+</body>
+
+</html>
