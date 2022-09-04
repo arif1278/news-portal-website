@@ -66,4 +66,31 @@ const loadAllNews = async (category_id) => {
 
 
 
+const displayNewsItem = newsAll => {
+
+
+
+    newsAll.sort((a, b) => {
+        return b.total_view - a.total_view;
+    });
+
+    const newsCount = document.getElementById('news-count').innerHTML = `${newsAll.length} items found for category`;
+
+
+    // =============No News==============//
+    const noNews = document.getElementById('no-news-category');
+    if (newsAll.length === 0) {
+        noNews.classList.remove('d-none');
+    }
+    else {
+        noNews.classList.add('d-none');
+    }
+
+
+
+
+
+
+}
+
 
