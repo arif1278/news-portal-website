@@ -1,20 +1,39 @@
-const allNews = async () => {
-    const response = await fetch("https://openapi.programming-hero.com/api/news/categories")
-    const data = await response.json();
-    // return data;
-    displayCategories(data.data.news_category);
+// =====get all categories======//
+
+const loadNews = async () => {
+    const url = 'https://openapi.programming-hero.com/api/news/categories'
+    try {
+        const res = await fetch(url);
+        const data = await res.json();
+        return data.data.news_category;
+    } catch (error) {
+        console.log(error);
+    }
+
 }
 
-const displayCategories = (category) => {
-    const categoriesContainer = document.getElementById('categori');
-    category.forEach(item => {
-        const li = document.createElement('li');
-        li.classList.add('menu', 'menu-horizontal', 'bg-base-100', 'mt-7')
-        li.innerHTML = `
-        <li><a onclick="loadCatDetails(${item.category_id})" class="text-2xl"${item.category_name}</a></li>
-        `;
-        categoriesContainer.appendChild(li);
-    });
+const setCategory = async () => {
+    const data = await loadNews();
+
+    const allCategory = document.getElementById('menu-bar');
+
+    const uniqueArray = [];
+
+    for (const category of data) {
+
+
+        if (uniqueArray.indexOf(category.category_name) === -1) {
+            uniqueArray.push(category.category_name);
+
+
+            const li = document.createElement('li');
+            li.innerHTML = `
+            <a onclick="loadAllNews('${category.category_id}')" class="nav-link btn btn-primary text-white ms-3 mt-2">${category.category_name}</a>
+            `;
+            allCategory.appendChild(li);
+        }
+    }
+
 }
 
-allNews();
+setCategory();
