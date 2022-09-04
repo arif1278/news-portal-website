@@ -138,6 +138,13 @@ const displayNewsItem = newsAll => {
     toggleSpinner(false);
 }
 
+const loadNewsDetails = async news_id => {
+    const url = `https://openapi.programming-hero.com/api/news/${news_id}`;
+    const res = await fetch(url);
+    const data = await res.json();
+    displayNewsDetails(data.data[0]);
+}
+
 const displayNewsDetails = newsDetails => {
     const modalTitle = document.getElementById('detailsModalTitle');
     modalTitle.innerText = newsDetails.title;
