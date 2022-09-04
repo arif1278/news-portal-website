@@ -1,80 +1,203 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>News Portal</title>
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.24.0/dist/full.css" rel="stylesheet" type="text/css" />
-    <script src="https://cdn.tailwindcss.com"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!---------Google Fonts---------->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Poppins&family=Roboto&display=swap"
+        rel="stylesheet">
+
+    <!--Font Awesome CDN Link-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- =======CSS Link===== -->
+    <link rel="stylesheet" href="style.css">
+
+    <title>News Today</title>
 </head>
 
 <body>
 
-    <!-- Header area -->
-    <header class="mt-7">
-        <div class="navbar bg-base-100">
-            <div class="flex-1">
-                <a class="btn btn-ghost normal-case text-xl">daisyUI</a>
+    <!-- ================Header Section=============== -->
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container mt-3">
+                <a class="navbar-brand" href="#">
+                    <h3><span class="text-primary" id="logo">📰 news</span> Today</h3>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link items" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link items" href="blog.html">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <button class="btn bg-primary text-white ms-3" type="submit"
+                                id="subscribe">Subscribe</button>
+                        </li>
+
+                    </ul>
+                </div>
             </div>
-            <div class="flex-none">
-                <ul class="menu menu-horizontal p-0">
-                    <li><a>News</a></li>
-                    <li><a>Blogs</a></li>
-                </ul>
-            </div>
-            <div class="w-10 rounded-full">
-                <img class="rounded-full" src="images/arif cover photo.jpg" />
-            </div>
-        </div>
-        <hr class="w-full">
-    </header>
+        </nav>
 
-    <!-- meno -->
-    <main>
-
-        <div id="meno">
-            <ul class="menu menu-horizontal bg-base-100 mt-7">
-                <li><a>Home</a></li>
-                <li><a>Breaking news</a></li>
-                <li><a>Regular news</a></li>
-                <li><a>International news</a></li>
-                <li><a>Sports</a></li>
-                <li><a>Entertainment</a></li>
-                <li><a>Culture</a></li>
-                <li><a>Arts</a></li>
-                <li><a>All news</a></li>
-            </ul>
-        </div>
-
-
-
-        <div class="mt-8 ml-10 mr-10">
-            <input id="search-field" type="text" class="input input-bordered input-accent w-full " />
-        </div>
-        <div class="flex mt-8 ml-10">
-            <h3 class="p-2">Short By view:</h3>
-
-            <input type="text" placeholder="Search" class="input input-bordered" />
-            <ul class="menu menu-horizontal bg-base-100 rounded-box p-2 ml-80">
-                <li class="p-3 bg-indigo-500">Today's Pick</li>
-                <!-- tabindex will make the parent menu focusable to keep the submenu open if it's focused -->
-                <li class="ml-5">
-                    <span class="border">Trending</span>
-
-                </li>
-            </ul>
+        <!-- ===========Line Bar======== -->
+        <div class="container-fluid px-5 ">
+            <hr>
         </div>
 
-        <section class="">
+        <!-- ================Categories Section================= -->
 
-            <div id="news-container" class="card mb-3 ml-10 " style="max-width: 540px;">
+        <ul class="nav justify-content-center py-2" id="menu-bar">
+
+
+        </ul>
+        <!-- ===========News Count========= -->
+        <section>
+            <div class="container mt-3 mb-3 border border-light bg-light">
+                <h5 id="news-count"></h5>
+            </div>
+            <!-- =============Sorting Section============== -->
+            <nav class="navbar navbar-expand-lg mb-5">
+                <div class="container">
+                    <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Sort by view :</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle text-muted" href="#" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    Default
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <div class="d-flex" role="search">
+                            <button class="btn btn-outline-primary me-4 active" type="button">Todays Pick</button>
+                            <button class="btn btn-outline-primary" type="button">Trending</button>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- =============All news Section=========== -->
+
+
+            <div id="news-container" class="mt-4">
 
             </div>
+
+            <div id="no-news-category" class="mt-5 d-none">
+                <h4 class="text-danger text-center">No news found for this category items</h4>
+            </div>
+
+            <!-- ============Spinner========== -->
+            <div id="spinner" class="d-none d-flex justify-content-center">
+                <div class="spinner-border text-success" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
+
         </section>
-    </main>
-    <script src="js/index.js"></script>
+
+        <!-- =======================Modal======================= -->
+
+        <div class="modal fade" id="detailsModal" tabindex="-1" aria-labelledby="detailsModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="detailsModalTitle">Modal title</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div id="model-details" class="modal-body">
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==============Container end=========== -->
+    </div>
+    <!-- ===========Footer Part============== -->
+
+    <div class="container-fluid text-dark pt-3" id="footer">
+        <div class="row d-flex pt-3 text-center px-4">
+            <div class="col-lg-3 text-center">
+                <h4 class="text-primary">📰 News Today</h4>
+                <p>This News portal is an access point to news; This is generally thought of as a Internet connection to
+                    a news source but the definition of a “Portal” would include a newspaper, magazine or any other
+                    access to news. A web portal is any access point to the Internet.</p>
+            </div>
+
+            <div class="col-lg-6 py-4">
+                <h5 class="py-5 text-primary">Copyright @ 2022 All Rights Reserved</h5>
+            </div>
+
+            <div class="col-lg-3">
+                <h4 class="text-primary">Contact Us</h4>
+                <p>Office 34, Wareless,<br>
+                    Mohakhali,<br>
+                    Dhaka-1212<br>
+                    Privacy Policy | Terms of use
+
+
+                </p>
+            </div>
+            <!-- ===========Social Media Link========= -->
+            <div class="col-lg-12 py-3 d-flex justify-content-center align-items-center mb-5">
+                <a href="https://www.google.com/" target="_blank"><i class="fa-brands fa-google ms-5 fs-4 link"></i></a>
+                <a href="https://twitter.com/" target="_blank"><i class="fa-brands fa-twitter ms-5 fs-4 link"></i></a>
+                <a href="https://www.youtube.com/" target="_blank"><i
+                        class="fa-brands fa-youtube ms-5 fs-4 link"></i></a>
+                <a href="https://www.linkedin.com/" target="_blank"><i
+                        class="fa-brands fa-linkedin ms-5 fs-4 link"></i></a>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <!-- ===========js Link======= -->
+    <script src="js/index.js">
+
+    </script>
+
 </body>
 
 </html>
