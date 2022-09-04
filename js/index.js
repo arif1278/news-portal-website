@@ -178,4 +178,4 @@ const displayNewsDetails = newsDetails => {
     `;
 }
 
-
+//  ++++++++++++++The end+++++++++++++++++   
